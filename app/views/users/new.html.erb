@@ -18,6 +18,17 @@
         <%= f.label :password_confirmation, "Confirmation" %>
         <%= f.password_field :password_confirmation %>
         
+        <h4>Please select all of your health concerns:</h4>
+        <ul>
+        <% HealthConcern.all_concerns.each do |h| %>
+          <li>
+          <%= check_box_tag "concerns[#{h}]", value = "1", checked = false %>
+          <%= h%>
+          </li>
+        <% end %>
+        </ul>
+
+        
         <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
