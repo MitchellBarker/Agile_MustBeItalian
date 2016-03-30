@@ -2,7 +2,7 @@
 
 <% if !logged_in? %>
   <h1>Welcome to Fork-Friendly!</h1>
-  <%= link_to "Sign up now!", 'https://pleasework-mitchellbarker1.c9users.io/signup', class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now!", '/signup', class: "btn btn-lg btn-primary" %>
 
 <%else%>
  <h1><%="Welcome #{current_user.name.capitalize}!"%></h1>
