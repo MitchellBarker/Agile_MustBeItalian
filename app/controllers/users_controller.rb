@@ -6,8 +6,15 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            redirect_to @user
+            if params[:concerns]
+                params[:concerns].each_key do |k|
+                    @healthconcern = @user.health_concerns.create(name: k)
+                end
+            end
+            flash[:success] = "Welcome to Fork-Friendly!"
+            redirect_to '/'
         else
+            
           render 'new'
         end
     end
