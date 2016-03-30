@@ -7,10 +7,11 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             if params[:concerns]
-                params[:concerns].each do |c|
-                    @healthconcern = @user.health_concerns.create(name: c)
+                params[:concerns].each_key do |k|
+                    @healthconcern = @user.health_concerns.create(name: k)
                 end
             end
+            log_in @user
             flash[:success] = "Welcome to Fork-Friendly!"
             redirect_to '/'
         else
