@@ -1,14 +1,13 @@
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  
+  
 
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+<% if !logged_in? %>
+  <h1>Welcome to Fork-Friendly!</h1>
+  <%= link_to "Sign up now!", 'https://pleasework-mitchellbarker1.c9users.io/signup', class: "btn btn-lg btn-primary" %>
 
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+<%else%>
+ <h1><%="Welcome #{current_user.name}!"%></h1>
+
+<% end%>
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
