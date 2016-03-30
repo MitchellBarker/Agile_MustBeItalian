@@ -59,9 +59,15 @@ RSpec.configure do |config|
 
   # Limits the available syntax to the non-monkey patched syntax that is
   # recommended. For more details, see:
+<<<<<<< HEAD
   #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
   #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
+=======
+  #   - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
+  #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
+  #   - http://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3#new__config_option_to_disable_rspeccore_monkey_patching
+>>>>>>> f673d67fc31d9b594647b7ba65835f02da47399d
   config.disable_monkey_patching!
 
   # Many RSpec users commonly either run the entire suite or an individual
