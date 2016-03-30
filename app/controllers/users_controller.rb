@@ -11,6 +11,7 @@ class UsersController < ApplicationController
                     @healthconcern = @user.health_concerns.create(name: k)
                 end
             end
+            log_in @user
             flash[:success] = "Welcome to Fork-Friendly!"
             redirect_to '/'
         else
