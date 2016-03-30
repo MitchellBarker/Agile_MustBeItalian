@@ -1,8 +1,9 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, 'Sign up') %><html>
 <h1>Sign up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    
     <%= form_for(@user) do |f| %>
         <div class = "form_group">
           <%= f.label :name, :class => "control-label col-sm-4"%>
@@ -23,7 +24,8 @@
           <%= f.label :password_confirmation, :class => "control-label col-sm-4" %>
           <%= f.password_field :password_confirmation, :placeholder => "Confirmation", :class => "control-label col-sm-8" %>
         </div>  
-      <%= f.submit "Create my account", class: "btn btn-primary"%>
+      <%= f.submit "Create my account", class: "btn btn-primary center-block"%>
     <% end %>
   </div>
 </div>
+</html>
