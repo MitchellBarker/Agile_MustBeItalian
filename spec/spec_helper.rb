@@ -16,8 +16,6 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-require "capybara/rspec"
-
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -30,6 +28,7 @@ RSpec.configure do |config|
     #     # => "be bigger than 2 and smaller than 4"
     # ...rather than:
     #     # => "be bigger than 2"
+    expectations.syntax = :should
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
@@ -59,15 +58,9 @@ RSpec.configure do |config|
 
   # Limits the available syntax to the non-monkey patched syntax that is
   # recommended. For more details, see:
-<<<<<<< HEAD
   #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
   #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
-=======
-  #   - http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
-  #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
-  #   - http://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3#new__config_option_to_disable_rspeccore_monkey_patching
->>>>>>> f673d67fc31d9b594647b7ba65835f02da47399d
   config.disable_monkey_patching!
 
   # Many RSpec users commonly either run the entire suite or an individual
@@ -98,3 +91,4 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
