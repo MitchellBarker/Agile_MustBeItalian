@@ -31,14 +31,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'sqlite3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'autotest-rails'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
 end
 
 group :development do
@@ -59,6 +61,5 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
-  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end

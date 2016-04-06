@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329184000) do
+ActiveRecord::Schema.define(version: 20160406030849) do
+
+  create_table "chows", force: :cascade do |t|
+    t.text     "name"
+    t.float    "serving_size"
+    t.float    "calories"
+    t.float    "sat_fat"
+    t.float    "sodium"
+    t.float    "carbs"
+    t.float    "sugar"
+    t.float    "fiber"
+    t.float    "protein"
+    t.float    "whole_grain"
+    t.integer  "ca_fe_k_at_20_percent"
+    t.integer  "gluten_free"
+    t.integer  "organic"
+    t.text     "tag"
+    t.integer  "upc"
+    t.text     "food_type"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "health_concerns", force: :cascade do |t|
     t.text     "name"
@@ -21,7 +42,8 @@ ActiveRecord::Schema.define(version: 20160329184000) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

@@ -39,3 +39,8 @@ margin-bottom: 10px;
 a:hover {
     color: #94D60A;
 }
+
+ul
+{
+    list-style-type: none;
+}
