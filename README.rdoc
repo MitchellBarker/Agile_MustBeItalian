@@ -25,11 +25,19 @@ Things you may want to cover:
 === How to Run
 1. Set up c9.io workspace.
 
-  i. Run *`gem install bundler`*
+  i. Run 
+  `gem install bundler`
   
-  ii. Run *`bundle install`*
+  ii. Run 
+  `bundle install`
   
-  iii. Run *`rake db:migrate`*
+  iii. Run 
+  `rake db:migrate`
   
-2. Run `rails s -p $PORT -b $IP`
+2. Run 
+  `rails s -p $PORT -b $IP`
 
+
+=== How to View
+
+Go to https://fork-friendly-bluyam.c9users.io/
