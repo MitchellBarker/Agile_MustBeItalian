@@ -1,0 +1,60 @@
+<h1>Chows</h1>
+  <%@types.each do |t|%>  
+    <ul>
+    <li><button class="btn" data-toggle="collapse" data-target="#<%=@types.index(t)%>"><%=t%></button></li>
+    </ul>
+    
+  
+    <div id="<%=@types.index(t)%>" class="collapse">
+      <div>
+      <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Serving size</th>
+          <th>Calories</th>
+          <th>Saturated fat</th>
+          <th>Sodium</th>
+          <th>Carbs</th>
+          <th>Sugar</th>
+          <th>Fiber</th>
+          <th>Protien</th>
+          <th>Whole Grain</th>
+          <th>20% (Ca,Fe,K)</th>
+          <th>Gluten Free</th>
+          <th>Organic</th>
+          
+        </tr>
+        <% Chow.where(food_type: t).each do |c|%>
+        <tr>
+          
+          <td><%= c.name %></td>
+          <td><%= c.serving_size %></td>
+          <td><%= c.calories %></td>
+          <td><%= c.sat_fat %></td>
+          <td><%= c.sodium %></td>
+          <td><%= c.carbs %></td>
+          <td><%= c.sugar %></td>
+          <td><%= c.fiber %></td>
+          <td><%= c.protein %></td>
+          <td><%= c.whole_grain %></td>
+          <td><%= c.ca_fe_k_at_20_percent %></td>
+          <td><%= c.gluten_free %></td>
+          <td><%= c.organic %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    </div>
+  
+  <%end%>
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    

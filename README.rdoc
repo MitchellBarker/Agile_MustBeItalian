@@ -33,3 +33,12 @@ Things you may want to cover:
   
 2. Run `rails s -p $PORT -b $IP`
 
+==Testing Frameworks and Coverage
+
+Cucumber should be used for happy/sad user paths. Basically, it's for UI/UX testing.
+
+RSpec should provide unit tests for 
+  Models
+  Controllers
+  RESTful Routes
+associated with the Cucumber tests.

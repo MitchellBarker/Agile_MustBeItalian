@@ -1,7 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Fork-Friendly", '#', id: "logo" %>
     <nav>
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <img class="logo" src="assets/fork-friendly-logo-full.png"/>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>

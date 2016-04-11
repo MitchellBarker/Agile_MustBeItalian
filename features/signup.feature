@@ -7,28 +7,31 @@ Feature: User can create an account
         | Wilson    | Kyle       | bigassbitch@gmail.com | sdfsdf   |
 
   Scenario: Attempt to create account from incomplete information
-    Given I am on the home page
-    When I fill in "name" as "Mitchell"
+    Given I am on the signup page
+    When I fill in "Last Name" with "Barker"
+    And I fill in "First Name" with "Mitchell"
     And I press "Create my account"
-    Then I will see "This form contains 5 errors"
+    Then I should see "The form contains 5 errors."
     And I am on the signup page
 
   Scenario: Attempt to create account with previously registered email
     Given I am on the signup page
-    When I fill in "last_name" as "Bitchell"
-    And I fill in "first_name" as "Marker"
-    And I fill in "email" as "lilbitch@gmail.com"
-    And I fill in "password" as "41968:)"
+    When I fill in "Last Name" with "Bitchell"
+    And I fill in "First Name" with "Marker"
+    And I fill in "Email" with "lilbitch@gmail.com"
+    And I fill in "Password" with "41968:)"
+    And I fill in "Confirmation" with "41968:)"
     And I press "Create my account"
-    Then I will see "Email has already been taken"
+    Then I should see "Email has already been taken"
     And I am on the signup page
     
   Scenario: Create and account with all the required fields
     Given I am on the signup page
-    When I fill in "last_name" as "Bitchell"
-    And I fill in "first_name" as "Marker"
-    And I fill in "email" as "lilbitch@gmail.com"
-    And I fill in "password" as "42069;)"
+    When I fill in "Last Name" with "Bitchell"
+    And I fill in "First Name" with "Marker"
+    And I fill in "Email" with "lilbitch2@gmail.com"
+    And I fill in "Password" with "42069;)"
+    And I fill in "Confirmation" with "42069;)"
     And I press "Create my account"
-    Then I will see "Welcome to Fork-Friendly!"
+    Then I should see "Welcome to Fork-Friendly!"
     And I am on the user home page
