@@ -1,9 +1,9 @@
 <h1>Chows</h1>
-  <%@types.each do |t|%>  
+  <%@types.each do |t|%>
     <ul>
-    <li><button class="btn" data-toggle="collapse" data-target="#<%=@types.index(t)%>"><%=t%></button></li>
+      <li><button class="btn" data-toggle="collapse" data-target="#<%=@types.index(t)%>"><%=t%></button>
+      </li>
     </ul>
-    
   
     <div id="<%=@types.index(t)%>" class="collapse">
       <div>

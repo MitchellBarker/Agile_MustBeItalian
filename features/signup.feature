@@ -1,10 +1,10 @@
 Feature: User can create an account
   Background:
     Given the following users exist:
-        | last_name | first_name | email                 | password |
-        | Barker    | Mitchell   | lilbitch@gmail.com    | sdfsdf   |
-        | Arroyo    | Brandon    | mediumbitch@gmail.com | sdfsdf   |
-        | Wilson    | Kyle       | bigassbitch@gmail.com | sdfsdf   |
+        | last_name | first_name | email                  | password |
+        | Barker    | Mitchell   | lilstitch@gmail.com    | sdfsdf   |
+        | Arroyo    | Brandon    | mediumstitch@gmail.com | sdfsdf   |
+        | Wilson    | Kyle       | bigstitch@gmail.com    | sdfsdf   |
 
   Scenario: Attempt to create account from incomplete information
     Given I am on the signup page
@@ -16,9 +16,9 @@ Feature: User can create an account
 
   Scenario: Attempt to create account with previously registered email
     Given I am on the signup page
-    When I fill in "Last Name" with "Bitchell"
+    When I fill in "Last Name" with "Stitchell"
     And I fill in "First Name" with "Marker"
-    And I fill in "Email" with "lilbitch@gmail.com"
+    And I fill in "Email" with "lilstitch@gmail.com"
     And I fill in "Password" with "41968:)"
     And I fill in "Confirmation" with "41968:)"
     And I press "Create my account"
@@ -27,11 +27,11 @@ Feature: User can create an account
     
   Scenario: Create and account with all the required fields
     Given I am on the signup page
-    When I fill in "Last Name" with "Bitchell"
+    When I fill in "Last Name" with "Stitchell"
     And I fill in "First Name" with "Marker"
-    And I fill in "Email" with "lilbitch2@gmail.com"
-    And I fill in "Password" with "42069;)"
-    And I fill in "Confirmation" with "42069;)"
+    And I fill in "Email" with "lilstitch2@gmail.com"
+    And I fill in "Password" with "1135$!"
+    And I fill in "Confirmation" with "1135$!"
     And I press "Create my account"
     Then I should see "Welcome to Fork-Friendly!"
-    And I am on the user home page
+    And I am on the home page

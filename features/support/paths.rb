@@ -22,6 +22,12 @@ module NavigationHelpers
     when /^the user\s?home\s?page$/
       user_path
       
+    when /^the chows\s?page$/
+      chows_path
+    
+    when /^the login\s?page$/
+      login_path
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

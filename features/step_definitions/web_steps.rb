@@ -57,6 +57,10 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+Then /^show me the page$/ do
+  save_and_open_page
+end
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
@@ -241,7 +245,4 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   else
     assert_equal expected_params, actual_params
   end
-end
-Then /^show me the page$/ do
-  save_and_open_page
 end
