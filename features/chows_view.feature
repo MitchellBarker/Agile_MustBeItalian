@@ -1,6 +1,7 @@
 Feature: User can view the foods from all categories
   Scenario: See all foods in the cookies category
     Given I am on the chows page
+    And I wait for 5 seconds
     When I press "COOKIES"
     Then I should see "Kashi Oatmeal"
   

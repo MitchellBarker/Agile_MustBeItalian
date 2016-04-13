@@ -37,7 +37,11 @@ describe SessionsController do
             get :destroy, nil, { :user_id => user.id }
         end
         
-        it '' do
+        it 'should log you out and redirect' do
+            expect(session[:user_id]).to eq nil
+            assigns(:current_user).should == nil
+            
+            response.should redirect_to root_url
         end
     end
 end

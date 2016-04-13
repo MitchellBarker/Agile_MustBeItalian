@@ -57,6 +57,10 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
+Given /^I wait for (\d+) seconds?$/ do |n|
+  sleep(n.to_i)
+end
+
 Then /^show me the page$/ do
   save_and_open_page
 end

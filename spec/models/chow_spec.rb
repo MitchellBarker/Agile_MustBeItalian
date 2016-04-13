@@ -1,5 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Chow, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Chow do
+    before :each do 
+        @file = Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/text.csv'), 'text/csv')
+    end
+    it "should import .csv" do
+        post :chow, :upload => @file
+        response.should be_success
+    end
 end
