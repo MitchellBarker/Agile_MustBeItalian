@@ -23,10 +23,14 @@ module NavigationHelpers
       user_path
       
     when /^the chows\s?page$/
-      chows_path
+      chows_index_path
     
     when /^the login\s?page$/
       login_path
+      
+    when /^the upload\s?page$/
+      chows_new_path
+      
       
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

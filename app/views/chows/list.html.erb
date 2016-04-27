@@ -1,0 +1,13 @@
+<h1>Your Grocery List</h1>
+
+<li>
+      <% if @items%>
+        <% @items.each do |t| %>
+            <ul><%= t%></ul>
+        <%end%>
+       <%end%>
+</li>
+
+
+
+

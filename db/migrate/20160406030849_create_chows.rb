@@ -3,19 +3,19 @@ class CreateChows < ActiveRecord::Migration
     create_table :chows do |t|
       t.text :name
       
-      t.string :serving_size
-      t.string :calories
-      t.string :sat_fat
-      t.string :sodium
-      t.string :carbs
-      t.string :sugar
-      t.string :fiber
-      t.string :protein
-      t.string :whole_grain
+      t.float :serving_size
+      t.float :calories
+      t.float :sat_fat
+      t.float :sodium
+      t.float :carbs
+      t.float :sugar
+      t.float :fiber
+      t.float :protein
+      t.float :whole_grain
       
-      t.string :ca_fe_k_at_20_percent
-      t.string :gluten_free
-      t.string :organic
+      t.boolean :ca_fe_k_at_20_percent
+      t.boolean :gluten_free
+      t.boolean :organic
       
       t.text :tag
       t.string :upc

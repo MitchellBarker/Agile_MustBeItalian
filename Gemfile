@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+Deprecate.skip = true if defined?(Deprecate.skip)
+Gem::Deprecate.skip = true if defined?(Gem::Deprecate.skip)
+
+#prawn creates pdfs from html
+gem 'prawn'
+#bcrypt is used for passwords
 gem 'bcrypt', '3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'

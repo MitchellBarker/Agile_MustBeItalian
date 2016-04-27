@@ -1,6 +1,5 @@
-<h2>Add files to database :{D</h2>
+<h2>Add files to database </h2>
     <%= form_tag import_chows_path, multipart: true do %>
-        <%= file_field_tag :file %>
+        <%= file_field_tag :file, :id =>'Choose File' %>
         <%= submit_tag "Import" %>
 <% end %>  
-  

@@ -1,13 +1,25 @@
-<h1>Chows</h1>
-  <%@types.each do |t|%>
+<h1>Choose Your Food:</h1>
+  <div class="btn-group" data-toggle="buttons" >
     <ul>
-      <li><button class="btn" data-toggle="collapse" data-target="#<%=@types.index(t)%>"><%=t%></button>
-      </li>
+      <button id="test"class="btn btn-primary">Diabetic</button>
+      <button class="btn btn-primary">High Blood Pressure</button>
+      <button class="btn btn-primary">High Cholesterol</button>
+      <button class="btn btn-primary" >BMI Over 25</button>
+      <!--<%= link_to "calories", :sort =>%>-->
     </ul>
-  
-    <div id="<%=@types.index(t)%>" class="collapse">
-      <div>
-      <table style="width:100%">
+  </div>
+  <%= form_tag chows_list_path do %>
+  <div class="accordion" id="myAccordion">
+    <%@types.each do |t|%>
+      <div class="panel">
+        <ul>
+          <li>
+            <button id="<%=t%>" type="button" class="btn btn-block btn-lg" data-toggle="collapse" data-parent="#myAccordion" data-target="#<%=@types.index(t)%>"><%=t%></button>
+          </li>
+        </ul>
+
+        <div id="<%=@types.index(t)%>" class="collapse" style="overflow-x:auto;">
+      <table  class="table table-striped" style="width:100%">
         <tr>
           <th>Name</th>
           <th>Serving size</th>
@@ -22,39 +34,38 @@
           <th>20% (Ca,Fe,K)</th>
           <th>Gluten Free</th>
           <th>Organic</th>
+          <th>Check</th>
           
         </tr>
+        
         <% Chow.where(food_type: t).each do |c|%>
-        <tr>
-          
-          <td><%= c.name %></td>
-          <td><%= c.serving_size %></td>
-          <td><%= c.calories %></td>
-          <td><%= c.sat_fat %></td>
-          <td><%= c.sodium %></td>
-          <td><%= c.carbs %></td>
-          <td><%= c.sugar %></td>
-          <td><%= c.fiber %></td>
-          <td><%= c.protein %></td>
+       
+        <tr >
+          <td class = "product-name"><%= c.name %></td>
+          <td><%= pretify c.serving_size %></td>
+          <td><%= pretify c.calories %></td>
+          <td><%= pretify c.sat_fat %></td>
+          <td><%= pretify c.sodium %></td>
+          <td><%= pretify c.carbs %></td>
+          <td><%= pretify c.sugar %></td>
+          <td><%= pretify c.fiber %></td>
+          <td><%= pretify c.protein %></td>
           <td><%= c.whole_grain %></td>
           <td><%= c.ca_fe_k_at_20_percent %></td>
           <td><%= c.gluten_free %></td>
           <td><%= c.organic %></td>
+         
+          <td><%= check_box_tag "items[#{c.name}]"%></td>      
         </tr>
-        <% end %>
+        <%end%>
       </table>
     </div>
-    </div>
-  
-  <%end%>
-  
-   
-   
-   
-   
-   
-   
-   
-   
+      </div>
+    <%end%>
+  </div>
+ 
+  <%= submit_tag  "Submit"%>
+<%end%>
+
    
     

@@ -9,7 +9,10 @@ describe SessionsHelper do
     end
     
     describe "#logged_in?" do
-    
+        it 'l' do
+            current_user = new User.new
+            expect(current_user.nil?).to eq false
+        end
     end
     
     describe "#log_out" do
