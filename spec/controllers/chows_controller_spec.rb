@@ -73,7 +73,13 @@ describe ChowsController do
                 post :import, { :file => "Totally not a real file" }
             end
             
-            it 'should indicate failure 
+            it 'should indicate failure' do
+                expect(flash[:danger]).to eq "Error Uploading File."
+            end
+            
+            it 'should redirect accordingly' do
+               response.should redirect_to chows_new_path 
+            end
         end
     end
 end
