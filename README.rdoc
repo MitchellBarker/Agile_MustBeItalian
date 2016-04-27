@@ -25,20 +25,19 @@ Things you may want to cover:
 === How to Run
 1. Set up c9.io workspace.
 
-  i. Run *`gem install bundler`*
+  i. Run 
+  `gem install bundler`
   
-  ii. Run *`bundle install`*
+  ii. Run 
+  `bundle install`
   
-  iii. Run *`rake db:migrate`*
+  iii. Run 
+  `rake db:migrate`
   
-2. Run `rails s -p $PORT -b $IP`
+2. Run 
+  `rails s -p $PORT -b $IP`
 
-==Testing Frameworks and Coverage
 
-Cucumber should be used for happy/sad user paths. Basically, it's for UI/UX testing.
+=== How to View
 
-RSpec should provide unit tests for 
-  Models
-  Controllers
-  RESTful Routes
-associated with the Cucumber tests.
+Go to https://fork-friendly-bluyam.c9users.io/
