@@ -10,8 +10,13 @@
         <%= render 'shared/error_messages' %>
         
         <div class = "form_group">
-          <%= f.label :name, :class => "control-label col-sm-4"%>
-          <%= f.text_field :name, :placeholder => "Name", :class => "control-label col-sm-8" %>
+          <%= f.label :first_name, :class => "control-label col-sm-4"%>
+          <%= f.text_field :first_name, :placeholder => "First Name", :class => "control-label col-sm-8" %>
+        </div>
+        
+        <div class = "form_group">
+          <%= f.label :last_name, :class => "control-label col-sm-4"%>
+          <%= f.text_field :last_name, :placeholder => "Last Name", :class => "control-label col-sm-8" %>
         </div>
 
         <div class = "form_group">
@@ -29,6 +34,10 @@
           <%= f.password_field :password_confirmation, :placeholder => "Confirmation", :class => "control-label col-sm-8" %>
 
         </div>
+        
+        <br>
+        <br>
+        <br>
         
         <h4>Please select all of your health concerns:</h4>
         <ul>

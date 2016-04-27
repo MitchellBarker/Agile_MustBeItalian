@@ -13,21 +13,46 @@
  *= require_tree .
  *= require_self
  */
-html {
-    background-image: url('bg.jpg');
+ 
+/*
+BRAND COLORS
+  PURPLE: #61269C;
+  GREEN: #94D60A; rgb(148,214,10)
+  DARK GREEN: ##638F07
+*/
+ 
+ 
+/*html {*/
+    /*background-image: url('https://fork-friendly-bluyam.c9users.io/assets/bg.jpg');*/
+/*    height: 100%*/
+
+    /* background-size: cover; fix this later */
+/*}*/
+
+html { 
+  background: url('https://fork-friendly-bluyam.c9users.io/assets/bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
-    background-color: rgba(255, 255, 255, 0.666);
+  background-color: rgba(0,0,0,0);
+  margin: 5px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-
-body {
-    margin: 5px;
+@media screen and (max-width: 768px) {
+  body { 
+    padding-top: 0px; 
+  }
 }
-
 
 h1, h2, h3, h4, h5, h6, a {
+  
+  text-align: center;
     color: #61269C;
 }
 
@@ -36,6 +61,139 @@ margin-bottom: 10px;
 
 }
 
-a:hover {
+.jumbotron {
+  padding-top: 150px;
+  color: #61259e;
+  text-align: center;
+  background-color: rgba(0,0,0,0);
+}
+
+
+ul
+{
+  list-style-type: none;
+}
+
+.logo {
+  height: 100px;
+  padding: 15px;
+}
+
+
+.btn{
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid rgba(97, 37, 158, 1) 2px;
+
+}
+
+
+.btn:hover{
+    color: #FFFFFF;
+    transition-duration: 0.4s;
+    background-color: #61269C;
+    border: solid rgba(255, 255,255, 1) 2px;
+
+}
+.btn-primary .active{
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: solid rgba(97, 37, 158, 1) 2px;
+}
+
+.btn-primary:hover .active:hover{
+    color: #FFFFFF;
+    transition-duration: 0.4s;
+    background-color: #61269C;
+    border: solid rgba(255, 255,255, 1) 2px;
+
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #61269C;
+    border-color: #61269C;
+}
+
+
+.navbar {
+    background-color: rgba(255,255,255,0.85);
+    border-bottom: 3px #61259e solid;
+    color: #61269C;
+    /*max-height: 200px;*/
+}
+
+.navbar-right {
+  padding: 25px;
+  color: #61269C;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #000000;
+  font-weight: bold;
+}
+
+
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
     color: #94D60A;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  color: #61269C;
+  font-weight: bold;
+}
+
+
+.nav>li>a:hover{
+  color: #94D60A;
+}
+
+.navbar .navbar-fixed-bottom {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+  background-color: #61269C;
+} 
+
+.panel {
+  background-color: transparent;
+}
+
+
+.product-name{
+  text-align: left;
+  font-weight: 500;
+}
+
+table, th, .alert, .alert-danger  {
+   background-color: rgba(255,255,255,0.85);
+   border: 2px solid grey;
+   border-color: #638F07;
+   text-align: center;
+   width: 66%;
+}
+
+
+/*Following code for if we have time to implement rounded table corners*/
+/*table {*/
+/*  border-radius: 10px;*/
+/*  border-collapse: separate !important;*/
+/*  border-spacing: 0;*/
+
+/*}*/
+
+/*tr, th, td{*/
+/*  border-radius: 0px;*/
+/*  border: none;*/
+/*}*/
+
+.table-striped > tbody > tr:nth-child(odd) > td, .table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: rgba(148,214,10,.5);
+    /*color: #638F07;*/
 }

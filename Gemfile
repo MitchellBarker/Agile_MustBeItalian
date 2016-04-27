@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+Deprecate.skip = true if defined?(Deprecate.skip)
+Gem::Deprecate.skip = true if defined?(Gem::Deprecate.skip)
+
+#prawn creates pdfs from html
+gem 'prawn'
+#bcrypt is used for passwords
 gem 'bcrypt', '3.1.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -22,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'roo'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -31,14 +38,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+#gem 'sqlite3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'autotest-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'sqlite3'
+
 end
 
 group :development do
@@ -59,6 +70,6 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
-  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'simplecov', :require => false
 end
