@@ -1,10 +1,11 @@
+ 
 <h1>Choose Your Food:</h1>
   <div class="btn-group" data-toggle="buttons" >
     <ul>
-      <button id="test"class="btn btn-primary">Diabetic</button>
-      <button class="btn btn-primary">High Blood Pressure</button>
-      <button class="btn btn-primary">High Cholesterol</button>
-      <button class="btn btn-primary" >BMI Over 25</button>
+      <button class="btn btn-primary" id="trigger-Diabetic">Diabetic</button>
+      <button class="btn btn-primary" id="trigger-Blood">High Blood Pressure</button>
+      <button class="btn btn-primary" id="trigger-cholesterol">High Cholesterol</button>
+      <button class="btn btn-primary" id="trigger-BMI" >BMI Over 25</button>
       
     </ul>
   </div>
@@ -19,8 +20,12 @@
         </ul>
 
         <div id="<%=@types.index(t)%>" class="collapse" style="overflow-x:auto;">
-      <table  class="table table-striped" style="width:100%">
+      <table id="table"  class="table table-striped child" style="width:100%">
+         <thead>
         <tr>
+          <% if current_user.admin? %>
+             <th>Delete</th>
+          <% end %>
           <th>Name</th>
           <th>Serving size</th>
           <th>Calories</th>
@@ -35,12 +40,15 @@
           <th>Gluten Free</th>
           <th>Organic</th>
           <th>Check</th>
-          
         </tr>
-        
+        </thead>
         <% Chow.where(food_type: t).each do |c|%>
        
         <tr >
+          <% if current_user.admin? %>
+             <td><%= link_to image_tag("X_icon.png", size: "15"), c, method: :delete,
+                data: {confirm: "You sure?"} %></td>
+          <% end %>
           <td class = "product-name"><%= c.name %></td>
           <td><%= pretify c.serving_size %></td>
           <td><%= pretify c.calories %></td>
@@ -63,9 +71,51 @@
       </div>
     <%end%>
   </div>
- 
-  <%= submit_tag  "Submit"%>
+  <center>
+ <%= submit_tag("Submit", :class => 'btn') %>
+ </center>
 <%end%>
 
-   
+  
+
+<script type="text/javascript">
+   $(".child").each(function(){
+       console.log("Dasfasdfasdfas")
+       $(this).find("tr:nth-child(3)").show()         
+    });
+   $("table").tablesorter(); 
+    $("#trigger-Diabetic").click(function() { 
+        // set sorting column and direction, this will sort on the first and third column the column index starts at zero 
+        var sorting = [[2,0],[8,1],[7,1]]; 
+        // sort on the first column 
+        $("table").trigger("sorton",[sorting]); 
+        // return false to stop default link action 
+        return false; 
+    });
+    $("#trigger-cholesterol").click(function() { 
+        // set sorting column and direction, this will sort on the first and third column the column index starts at zero 
+        var sorting = [[3,0]]; 
+        // sort on the first column 
+        $("table").trigger("sorton",[sorting]); 
+        // return false to stop default link action 
+        
+        return false; 
+    });
+    $("#trigger-Blood").click(function() { 
+        // set sorting column and direction, this will sort on the first and third column the column index starts at zero 
+        var sorting = [[4,0]]; 
+        // sort on the first column 
+        $("table").trigger("sorton",[sorting]); 
+        // return false to stop default link action 
+        return false; 
+    });
+     $("#trigger-BMI").click(function() { 
+        // set sorting column and direction, this will sort on the first and third column the column index starts at zero 
+        var sorting = [[2,0],[5,0]]; 
+        // sort on the first column 
+        $("table").trigger("sorton",[sorting]); 
+        // return false to stop default link action 
+        return false; 
+    });
+</script>
     

@@ -29,7 +29,7 @@ module NavigationHelpers
       login_path
       
     when /^the upload\s?page$/
-      chows_new_path
+      new_chow_path
       
       
     # Add more mappings here.

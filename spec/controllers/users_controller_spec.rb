@@ -58,4 +58,35 @@ describe UsersController do
             end
         end
     end
+    
+    # describe 'edit' do
+    #     before do
+    #         include SessionsHelper
+    #         log_in(User.find_by(first_name: 'admin'))
+    #         get :edit
+    #     end
+        
+    #     it 'should set user for editting' do
+    #         assigns(:user).should_not == nil
+    #     end
+    # end
+    
+    # describe 'index' do
+        
+        
+    #     before do
+    #         include ActionView::Helpers
+    #         # include SessionsHelper
+    #         # log_in(User.find_by(first_name: 'admin'))
+            
+    #         # controller.stub :logged_in_user
+    #         # controller.stub :is_admin
+            
+    #         get :index
+    #     end
+        
+    #     it 'should set user for display' do
+    #         assigns(:user).should_not == nil
+    #     end
+    # end
 end

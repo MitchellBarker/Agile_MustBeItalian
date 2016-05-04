@@ -49,6 +49,10 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+When /^(?:|I )click "([^"]*)"$/ do |name|
+  click_on(name)
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -59,6 +63,10 @@ end
 
 Given /^I wait for (\d+) seconds?$/ do |n|
   sleep(n.to_i)
+end
+
+Given /^I debug$/ do
+  puts page.body
 end
 
 Then /^show me the page$/ do

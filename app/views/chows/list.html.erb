@@ -1,13 +1,30 @@
 <h1>Your Grocery List</h1>
 
-<li>
+<table id="table"  class="table table-striped child" style="width:100%">
+    <tr>
+          <th>Item</th>
+          <th>Check</th>
+    </tr>
       <% if @items%>
         <% @items.each do |t| %>
-            <ul><%= t%></ul>
+          <tr>
+            <td  class = "product-name" ><%= t[0]%></td>
+            <td>
+               
+                    <input type="checkbox" /></input>
+                
+            </td>
+          </tr>
         <%end%>
+        
+    
        <%end%>
-</li>
-
+</table>
+<center>
+<button class = "btn">
+  <a href="#" onclick="window.print();return false;">Print</a> 
+</button>
+</center>
 
 
 

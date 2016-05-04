@@ -1,6 +1,8 @@
 require "prawn"
 
 class ChowsController < ApplicationController
+  before_action :logged_in_user, only: [:new, :index, :import, :list, :destroy]
+  before_action :is_admin, only: [:new, :import, :destroy]
   
   def new
     # @user = Chow.new
@@ -9,14 +11,12 @@ class ChowsController < ApplicationController
   def index
     @types = Chow.pluck :food_type
     @types = @types.uniq
+    
   end
   
   def import
     begin
       Chow.import(params[:file])
-      puts "\n \n FILE: \n"
-      puts params[:file]
-      puts "\n \n"
     rescue 
       flash[:danger] = "Error Uploading File."
       redirect_to chows_new_path
@@ -30,37 +30,26 @@ class ChowsController < ApplicationController
     @items = params[:items]
   end
   
-  # def download
-  #   @items = params[:items]
-  #   send_data gen_pdf(@items),
-  #     filename: "groceries.pdf",
-  #     type: "application/pdf"
-  # end
-  
-  def sort_diabetic type
-    @chows = Chow.where(food_type: type).order(calories: :asc, protein: :desc, fiber: :desc).limit(3)
+  def destroy
+    Chow.find(params[:id]).destroy
+    flash[:success] = "Item deleted"
+    redirect_to chows_index_path
   end
-  
-  def sort_cholesterol type
-    @chows = Chow.where(food_type: type).order(sat_fat: :asc).limit(3)
-  end
-  
-  def sort_bmi type
-    @chows = Chow.where(food_type: type).order(calories: :asc, carbs: :asc).limit(3)
-  end
-  
-  def sort_bp type
-    @chows = Chow.where(food_type: type).order(sodium: :asc).limit(3)
-  end
-    
-  #Sorting functions
-  
-
-  
   
  
   
   private
+  def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+  end
+    
+  def is_admin
+        redirect_to(root_url) unless current_user.admin?
+  end
   
   check = "\xE2\  x98\x90" # "☐"
   
