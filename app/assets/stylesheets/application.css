@@ -36,7 +36,7 @@ html {
   /*background-image: url('bg.jpg') no-repeat center center fixed; */
   
   /*background-image: url('https://fork-friendly-bluyam.c9users.io/assets/bg.jpg') no-repeat center center fixed; */
-  background: url(<%= asset_path 'bg.png' %>); 
+  background-image: image_url('bg.jpg'); 
   /*background-image: url(<%= asset_path 'bg.png' %>); */
   /*url(<%= asset_path 'upload.png' %>)*/
   -webkit-background-size: cover;
