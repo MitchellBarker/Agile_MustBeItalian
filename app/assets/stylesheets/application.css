@@ -30,9 +30,13 @@ BRAND COLORS
 /*}*/
 
 html { 
+  background: url('https://fork-friendly-bluyam.c9users.io/assets/bg.jpg') no-repeat center center fixed; 
+  /*^^THIS ONE DEFINITELY WORKS^^*/
+  
   /*background-image: url('bg.jpg') no-repeat center center fixed; */
+  
   /*background-image: url('https://fork-friendly-bluyam.c9users.io/assets/bg.jpg') no-repeat center center fixed; */
-  background-image: url(<%= asset_path 'bg.png' %>) no-repeat center center fixed; 
+  /*background-image: url(<%= asset_path 'bg.png' %>) no-repeat center center fixed; */
   /*url(<%= asset_path 'upload.png' %>)*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
